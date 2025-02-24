@@ -15,6 +15,7 @@ export class MovieService {
   getMoviesPopular(): Observable<any> {
     return this.http.get<any>(`https://api.themoviedb.org/3/trending/all/day?api_key=${this.apiKey}`);
   }
+  
   getMoviesPopularWeek():Observable<any>{
     return this.http.get<any>(`https://api.themoviedb.org/3/trending/all/week?api_key=${this.apiKey}`);
   }
