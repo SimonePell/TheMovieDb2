@@ -1,43 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Angular App</title>
-</head>
-<body>
+<div class="top-bar">
+    <div class="left-section">
+        <div class="image-placeholder"></div>
+        <button class="icon-button">L1</button>
+        <button class="icon-button">L2</button>
+    </div>
+    <div class="right-section">
+        <button class="icon-button">R1</button>
+        <button class="icon-button">R2</button>
+        <button class="icon-button">R3</button>
+        <button class="icon-button">R4</button>
+    </div>
+</div>
 
-        <div class="top-bar">
-             <div class="left-section">
-             <div class="image-placeholder"></div>
-             <button class="icon-button">L1</button>
-             <button class="icon-button">L2</button>
-        </div>
-        <div class="right-section">
-             <button class="icon-button">R1</button>
-             <button class="icon-button">R2</button>
-             <button class="icon-button">R3</button>
-             <button class="icon-button">R4</button>
-        </div>
-        </div>
-        <div class="search-bar">
-            <form>
-                <input type="text" placeholder="Search..." class="search-input">
-            </form>
-        </div>
-        <div class="background-section">
-            <div class="overlay">
-                <form>
-                    <input type="text" placeholder="Search..." class="search-input overlay-input">
-                </form>
-            </div>
-        </div>
+<div class="search-bar">
+    <form>
+        <input type="text" placeholder="Search..." class="search-input">
+    </form>
+</div>
 
+<div class="background-section">
+    <div class="overlay">
+        <form>
+            <input type="text" placeholder="Search..." class="search-input overlay-input">
+        </form>
+    </div>
+</div>
 
-        <nav>
-            <a routerLink="/" routerLinkActive="active">Week</a>
-            <a routerLink="/movies" routerLinkActive="active">Today</a>
-        </nav>
-        <router-outlet></router-outlet>
+<nav>
+    <a routerLink="/" routerLinkActive="active">Week</a>
+    <a routerLink="/movies" routerLinkActive="active">Today</a>
+</nav>
 
-</body>
-
+<router-outlet></router-outlet>

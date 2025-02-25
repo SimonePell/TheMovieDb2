@@ -10,9 +10,3 @@ platformBrowserDynamic().bootstrapModule(AppModule, {
 })
   .catch(err => console.error(err));
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideHttpClient(withFetch()), // <-- Enable fetch
-    provideClientHydration(withEventReplay())
-  ]
-}).catch(err => console.error(err));
