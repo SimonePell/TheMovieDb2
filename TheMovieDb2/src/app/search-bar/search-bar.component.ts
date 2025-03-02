@@ -21,7 +21,7 @@
     ngOnInit() {
       this.searchControl.valueChanges
         .pipe(
-          debounceTime(300), // Ritardo per evitare troppe richieste
+          debounceTime(300),
           switchMap(query => {
             if (!query.trim()) {
               this.suggestions = [];

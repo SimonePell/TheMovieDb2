@@ -21,7 +21,7 @@ export class MovieDetailsComponent implements OnInit {
   ){}
 
   ngOnInit(){
-    const movieId = this.route.snapshot.paramMap.get('id'); // <-- Correctly read route parameter
+    const movieId = this.route.snapshot.paramMap.get('id'); 
     if(movieId){
       this.movieService.getMovieById(movieId).subscribe(data => {
         this.movie = data;
@@ -31,9 +31,9 @@ export class MovieDetailsComponent implements OnInit {
   
   goBack() {
     if (window.history.length > 1) {
-      this.location.back(); // Go back if possible
+      this.location.back(); 
     } else {
-      this.router.navigate(['/movies']); // Otherwise, navigate to /movies
+      this.router.navigate(['/movies']); 
     }
   }
   

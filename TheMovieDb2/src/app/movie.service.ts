@@ -3,13 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map} from 'rxjs';
 
 @Injectable({
-  providedIn: 'root' // Il servizio è disponibile in tutta l'app
+  providedIn: 'root' 
 })
 export class MovieService {
-  private apiKey = '3857575925f0faaad14d639b0f165034';
+  private apiKey = 'your_api_key';
   private baseUrl = 'https://api.themoviedb.org/3/movie';
 
-  // Iniettiamo HttpClient per fare richieste HTTP
   constructor(private http: HttpClient) {}
 
   getMoviesPopular(): Observable<any> {
@@ -26,6 +25,6 @@ export class MovieService {
 
   searchMovies(query: string): Observable<any[]> {
     return this.http.get<any>(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${query}`)
-      .pipe(map(response => response.results)); // Restituisce solo l'array di film
+      .pipe(map(response => response.results));
   }
 }

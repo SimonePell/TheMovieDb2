@@ -8,15 +8,14 @@ import { MovieService } from '../movie.service';
   standalone: false,
 })
 export class HomeComponent{
-  movies: any[] = []; // Array che conterrà i film ricevuti dall'API
+  movies: any[] = []; 
 
   constructor(private movieService: MovieService) {}
 
-  // Quando il componente si inizializza, ottiene i film
   ngOnInit(): void {
     this.movieService.getMoviesPopularWeek().subscribe({
       next: (data) => {
-        this.movies = data.results; // Salva i film nell'array
+        this.movies = data.results; 
       },
       error: (err) => {
         console.error('Errore nel caricamento dei film:', err);
