@@ -12,6 +12,8 @@ import { SlidetoggleComponent } from './slidetoggle/slidetoggle.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -24,12 +26,15 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     MoviesComponent,
     SlidetoggleComponent,
     MovieDetailsComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     RouterModule,
+    
+    ReactiveFormsModule
   ],
   providers: [
     provideHttpClient(withFetch()),

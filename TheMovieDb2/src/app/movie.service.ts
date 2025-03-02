@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map} from 'rxjs';
 
 @Injectable({
   providedIn: 'root' // Il servizio è disponibile in tutta l'app
@@ -22,5 +22,10 @@ export class MovieService {
 
   getMovieById(id: string): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/${id}?api_key=${this.apiKey}`);
+  }
+
+  searchMovies(query: string): Observable<any[]> {
+    return this.http.get<any>(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${query}`)
+      .pipe(map(response => response.results)); // Restituisce solo l'array di film
   }
 }

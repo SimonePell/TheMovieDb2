@@ -1,0 +1,12 @@
+<div class="search-container">
+    <input type="text" [formControl]="searchControl" placeholder="Cerca un film..." class="search-input" />
+    
+    <div *ngIf="loading" class="loading-spinner">🔄</div>
+  
+    <ul *ngIf="suggestions.length > 0" class="suggestions-list">
+      <li *ngFor="let movie of suggestions" (click)="goToDetails(movie)">
+        {{ movie.title }}
+      </li>
+    </ul>
+  </div>
+  
